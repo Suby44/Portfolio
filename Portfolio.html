@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spencer Ruby | Mechanical Engineering Portfolio</title>
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --card: #121824;
+            --text: #e8eef5;
+            --muted: #a8b3c2;
+            --line: rgba(255,255,255,0.08);
+            --accent: #5cc8ff;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            width: min(1000px, 92vw);
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+
+        header {
+            padding: 28px;
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, rgba(92,200,255,0.08), rgba(18,24,36,0.6));
+            border-radius: 18px;
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: 34px;
+            letter-spacing: 0.2px;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15.5px;
+        }
+
+        .quicklinks {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.03);
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        section { margin-top: 26px; }
+
+        .section-title {
+            font-size: 18px;
+            margin: 22px 0 10px;
+            color: var(--text);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            grid-column: span 12;
+            border: 1px solid var(--line);
+            background: rgba(18,24,36,0.75);
+            border-radius: 18px;
+            padding: 18px;
+        }
+
+        .skills-grid .card { grid-column: span 6; }
+        @media (max-width: 800px) { .skills-grid .card { grid-column: span 12; } }
+
+        .muted { color: var(--muted); }
+
+        .project {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 16px;
+            align-items: start;
+        }
+        @media (max-width: 900px) { .project { grid-template-columns: 1fr; } }
+
+        .project h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0 0;
+        }
+        .tag {
+            font-size: 12.5px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            background: rgba(255,255,255,0.02);
+        }
+
+        ul {
+            margin: 10px 0 0 18px;
+            padding: 0;
+        }
+        li { margin: 6px 0; }
+
+        .img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .img-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.03);
+        }
+        @media (max-width: 900px) {
+            .img-grid { grid-template-columns: 1fr; }
+            .img-grid img { aspect-ratio: 16 / 9; }
+        }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <h1>Spencer Ruby</h1>
+        <p class="subtitle">
+            Mechanical Engineering student at Queen’s University • Vehicle Dynamics • CAD / FEA / Manufacturing
+        </p>
+
+        <div class="quicklinks">
+            <a class="pill" href="#projects">Projects</a>
+            <a class="pill" href="#skills">Skills</a>
+            <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="mailto:youremail@example.com">Email</a>
+            <a class="pill" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
+    </header>
+
+    <section id="skills">
+        <div class="section-title">Technical Skills</div>
+        <div class="grid skills-grid">
+            <div class="card">
+                <strong>CAD & Design</strong>
+                <p class="muted">SolidWorks (parts, assemblies, drawings), tolerance-aware design, prototyping.</p>
+            </div>
+            <div class="card">
+                <strong>Simulation</strong>
+                <p class="muted">FEA in SolidWorks Simulation (stress, deformation, factor of safety).</p>
+            </div>
+            <div class="card">
+                <strong>Manufacturing</strong>
+                <p class="muted">CNC milling, waterjet, 3D printing (FDM), mechanical assembly & finishing.</p>
+            </div>
+            <div class="card">
+                <strong>Programming / Tools</strong>
+                <p class="muted">MATLAB, Python, Arduino/C++ (basic controls & data).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">Featured Projects</div>
+
+        <!-- Project 1 -->
+        <div class="card project">
+            <div>
+                <h3>Formula SAE — Suspension Rockers (Front & Rear)</h3>
+                <p class="muted">
+                    Designed, analyzed, and manufactured suspension rocker components for a Formula SAE vehicle.
+                </p>
+                <ul>
+                    <li>Modeled front and rear rockers in SolidWorks and integrated into suspension assemblies</li>
+                    <li>Ran FEA (stress/deflection/FoS) to validate geometry and guide iterations</li>
+                    <li>Manufactured parts using waterjet + CNC milling; generated custom Mastercam toolpaths</li>
+                    <li>Collaborated with Vehicle Dynamics team to meet packaging and performance targets</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">FEA</span>
+                    <span class="tag">Mastercam</span>
+                    <span class="tag">CNC</span>
+                    <span class="tag">Waterjet</span>
+                </div>
+                <p style="margin-top:12px;">
+                    <a href="#" target="_blank" rel="noopener">Project repo</a> •
+                    <a href="#" target="_blank" rel="noopener">Gallery</a>
+                </p>
+            </div>
+
+            <div class="img-grid">
+                <!-- Replace these with your images -->
+                <img src="images/fsae_rocker_1.jpg" alt="FSAE Rocker Image 1">
+                <img src="images/fsae_rocker_2.jpg" alt="FSAE Rocker Image 2">
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card project">
+            <div>
+                <h3>1:32 Scale Wind Tunnel</h3>
+                <p class="muted">Small-scale wind tunnel concept and build for model vehicle testing.</p>
+                <ul>
+                    <li>Designed structure and flow path components in SolidWorks</li>
+                    <li>Integrated Arduino-controlled fan system for adjustable airflow</li>
+                    <li>Manufactured and assembled parts using 3D printing and basic fabrication</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">Arduino</span>
+                    <span class="tag">3D Printing</span>
+                    <span class="tag">Electronics</span>
+                </div>
+            </div>
+
+            <div class="img-grid">
+                <img src="images/windtunnel_1.jpg" alt="Wind tunnel image 1">
+                <img src="images/windtunnel_2.jpg" alt="Wind tunnel image 2">
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card project">
+            <div>
+                <h3>MAAG Prototype Model — NPE Trade Show</h3>
+                <p class="muted">Prototype build from CAD updates through final assembly and show presentation.</p>
+                <ul>
+                    <li>Modified CAD models for FDM printing, accounting for tolerances and print constraints</li>
+                    <li>Produced parts using an in-house print farm; finished surfaces with airbrushing</li>
+                    <li>Completed full assembly and presented the prototype at the NPE Plastics Trade Show (Florida)</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">CAD</span>
+                    <span class="tag">3D Printing</span>
+                    <span class="tag">Assembly</span>
+                    <span class="tag">Finishing</span>
+                </div>
+            </div>
+
+            <div class="img-grid">
+                <img src="images/maag_1.jpg" alt="MAAG prototype image 1">
+                <img src="images/maag_2.jpg" alt="MAAG prototype image 2">
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div>© <span id="year"></span> Spencer Ruby • Built with plain HTML/CSS • Hosted on GitHub Pages</div>
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
